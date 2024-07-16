@@ -17,15 +17,11 @@ export default function Home() {
   ];
 
   const handleClickPrevious = () => {
-    if(index > 0) {
-      setIndex((prev) => prev - 1);
-    } 
+    setIndex((prev) => (prev === 0 ? names.length - 1 : prev - 1));
   };
 
   const handleClickNext = () => {
-    if(index < names.length-1) {
-      setIndex((prev) => prev + 1);
-    } 
+    setIndex((prev) => (prev === names.length - 1 ? 0 : prev + 1)); 
   };
 
   return (
