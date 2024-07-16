@@ -6,22 +6,45 @@ import { useState } from "react";
 export default function Home() {
   const [index, setIndex] = useState(0);
 
-  const names = ["Namık", "Engin", "Eda"];
+  const names = [
+    "https://picsum.photos/id/237/200/300",
+    "https://picsum.photos/id/238/200/300",
+    "https://picsum.photos/id/239/200/300",
+    "https://picsum.photos/id/240/200/300",
+    "https://picsum.photos/id/241/200/300",
+    "https://picsum.photos/id/242/200/300",
+    "https://picsum.photos/id/243/200/300",
+  ];
 
   const handleClickPrevious = () => {
-    setIndex(prev => prev - 1);
+    if(index > 0) {
+      setIndex((prev) => prev - 1);
+    } 
   };
 
   const handleClickNext = () => {
-    setIndex(prev => prev + 1);
+    if(index < names.length-1) {
+      setIndex((prev) => prev + 1);
+    } 
   };
 
   return (
-    <>  
-        <h1>Project 1: Carousel</h1>
-        <button onClick={handleClickPrevious}>Previous</button>
-        <p>{names[index]}</p>
-        <button onClick={handleClickNext}>Next</button>
+    <>
+      <div className={styles.mycarousel}>
+        <h2>Project 1: Carousel</h2>
+        <div className={styles.carouselContainer}>
+          <button
+            className={styles.carouselButton}
+            onClick={handleClickPrevious}
+          >
+            {"◀️"}
+          </button>
+          <img src={names[index]} alt="Nice photo" />
+          <button className={styles.carouselButton} onClick={handleClickNext}>
+            {"▶️"}
+          </button>
+        </div>
+      </div>
     </>
 
     /*

@@ -228,3 +228,41 @@
     transform: rotate(0deg);
   }
 }
+
+/* My styles */
+.mycarousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Görüntü genişliğini buraya ayarlayabilirsiniz */
+}
+
+.carouselContainer img {
+  max-width: 80%; /* Görüntü genişliğini buraya ayarlayabilirsiniz */
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.carouselButton:first-of-type {
+  left: 0;
+}
+
+.carouselButton:last-of-type {
+  right: 0;
+}
