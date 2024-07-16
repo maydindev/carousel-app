@@ -1,8 +1,30 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [index, setIndex] = useState(0);
+
+  const names = ["Namık", "Engin", "Eda"];
+
+  const handleClickPrevious = () => {
+    setIndex(prev => prev - 1);
+  };
+
+  const handleClickNext = () => {
+    setIndex(prev => prev + 1);
+  };
+
   return (
+    <>  
+        <h1>Project 1: Carousel</h1>
+        <button onClick={handleClickPrevious}>Previous</button>
+        <p>{names[index]}</p>
+        <button onClick={handleClickNext}>Next</button>
+    </>
+
+    /*
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -91,5 +113,6 @@ export default function Home() {
         </a>
       </div>
     </main>
+    */
   );
 }
